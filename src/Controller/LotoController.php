@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Loto;
-use App\Form\LotoType;
+use App\Form\Loto1Type;
 use App\Repository\LotoRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -25,7 +25,7 @@ class LotoController extends AbstractController
     public function new(Request $request): Response
     {
         $loto = new Loto();
-        $form = $this->createForm(LotoType::class, $loto);
+        $form = $this->createForm(Loto1Type::class, $loto);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -53,7 +53,7 @@ class LotoController extends AbstractController
     #[Route('/{id}/edit', name: 'loto_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Loto $loto): Response
     {
-        $form = $this->createForm(LotoType::class, $loto);
+        $form = $this->createForm(Loto1Type::class, $loto);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

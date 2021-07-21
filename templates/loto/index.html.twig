@@ -10,6 +10,15 @@
             <tr>
                 <th>Id</th>
                 <th>Annee_numero_de_tirage</th>
+                <th>Jour_de_tirage</th>
+                <th>Date_de_tirage</th>
+                <th>Date_de_forclusion</th>
+                <th>Boule_1</th>
+                <th>Boule_2</th>
+                <th>Boule_3</th>
+                <th>Boule_4</th>
+                <th>Boule_5</th>
+                <th>Numero_chance</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -18,6 +27,15 @@
             <tr>
                 <td>{{ loto.id }}</td>
                 <td>{{ loto.anneeNumeroDeTirage }}</td>
+                <td>{{ loto.jourDeTirage }}</td>
+                <td>{{ loto.dateDeTirage ? loto.dateDeTirage|date('Y-m-d') : '' }}</td>
+                <td>{{ loto.dateDeForclusion ? loto.dateDeForclusion|date('Y-m-d') : '' }}</td>
+                <td>{{ loto.boule1 }}</td>
+                <td>{{ loto.boule2 }}</td>
+                <td>{{ loto.boule3 }}</td>
+                <td>{{ loto.boule4 }}</td>
+                <td>{{ loto.boule5 }}</td>
+                <td>{{ loto.numeroChance }}</td>
                 <td>
                     <a href="{{ path('loto_show', {'id': loto.id}) }}">show</a>
                     <a href="{{ path('loto_edit', {'id': loto.id}) }}">edit</a>
@@ -25,7 +43,7 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="3">no records found</td>
+                <td colspan="12">no records found</td>
             </tr>
         {% endfor %}
         </tbody>

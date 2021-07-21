@@ -15,6 +15,42 @@
                 <th>Annee_numero_de_tirage</th>
                 <td>{{ loto.anneeNumeroDeTirage }}</td>
             </tr>
+            <tr>
+                <th>Jour_de_tirage</th>
+                <td>{{ loto.jourDeTirage }}</td>
+            </tr>
+            <tr>
+                <th>Date_de_tirage</th>
+                <td>{{ loto.dateDeTirage ? loto.dateDeTirage|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Date_de_forclusion</th>
+                <td>{{ loto.dateDeForclusion ? loto.dateDeForclusion|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Boule_1</th>
+                <td>{{ loto.boule1 }}</td>
+            </tr>
+            <tr>
+                <th>Boule_2</th>
+                <td>{{ loto.boule2 }}</td>
+            </tr>
+            <tr>
+                <th>Boule_3</th>
+                <td>{{ loto.boule3 }}</td>
+            </tr>
+            <tr>
+                <th>Boule_4</th>
+                <td>{{ loto.boule4 }}</td>
+            </tr>
+            <tr>
+                <th>Boule_5</th>
+                <td>{{ loto.boule5 }}</td>
+            </tr>
+            <tr>
+                <th>Numero_chance</th>
+                <td>{{ loto.numeroChance }}</td>
+            </tr>
         </tbody>
     </table>
 

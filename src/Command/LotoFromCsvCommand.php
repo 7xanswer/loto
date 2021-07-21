@@ -86,7 +86,17 @@ class LotoFromCsvCommand extends Command
 
                 if (!$result) {
                     $result = new Loto();
-                    $result->setAnneeNumeroDeTirage($row['annee_numero_de_tirage']);
+                    $result->setAnneeNumeroDeTirage($row['annee_numero_de_tirage'])
+                        ->setJourDeTirage('jour_de_tirage')
+                        ->setDateDeTirage(new \DateTime('date_de_tirage'))
+                        ->setDateDeForclusion(new \DateTime('date_de_forclusion'))
+                        ->setBoule1('boule_1')
+                        ->setBoule2('boule_2')
+                        ->setBoule3('boule_3')
+                        ->setBoule4('boule_4')
+                        ->setBoule5('boule_5')
+                        ->setNumeroChance('numero_chance')
+                    ;
                     $this->entityManager->persist($result);
                     $resultCreated++;
                 }
